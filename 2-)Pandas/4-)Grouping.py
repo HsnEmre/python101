@@ -17,5 +17,12 @@ toplama_ve_ortalama=df.groupby('Kategori').agg(
 print(toplama_ve_ortalama)
 
 en_pahali_urun=df.loc[df.groupby('Kategori')['Fiyat (TL)'].idxmax()]
+print(en_pahali_urun)
+
+
+satis_ust_gruplar=df.groupby('Kategori').filter(lambda x:['Satis'].sum() > 50)
+print(satis_ust_gruplar)
+
+
 
 
